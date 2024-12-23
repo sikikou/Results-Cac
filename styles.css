@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://images.wallpapersden.com/image/download/playerunknown-s-battlegrounds-4k-halloween_bWxtZmuUmZqaraWkpJRobWllrWdma2U.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #f5a623; /* Golden color for gaming theme */
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #1e2430;
+    color: white;
+    flex: 1;
+    font-size: 18px;
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    background-color: #3b4a6b; /* Dark blue for buttons */
+    color: white;
+}
+
+.btn.red {
+    background-color: #d9534f; /* Red color for delete button */
+}
+
+.btn.save {
+    background-color: #f5a623; /* Golden color for save button */
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111;
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+thead th {
+    background-color: #f5a623;
+    color: black;
+    padding: 20px;
+}
+
+tbody tr {
+    background-color: #2a2f3b;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #343b4b;
+}
+
+tbody tr:hover {
+    background-color: #454d60;
+}
+
+th, td {
+    padding: 18px;
+    border: 1px solid #444;
+}
+
+
+.delete-button {
+    font-size: 18px;
+    color: red;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    color: darkred;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #111; /* Dark background, matching the table headers */
+    color: #fff; /* White text for contrast */
+    font-size: 16px; /* Readable font size */
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .container {
+        width: 98%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"], input[type="number"], button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%; /* makes buttons easier to tap on mobile */
+    }
+
+    .leaderboard-wrapper {
+        padding: 10px 0;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}

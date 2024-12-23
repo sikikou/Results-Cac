@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Leaderboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(() => {
+                console.log('Service Worker Registered');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">PUBG Mobile Match Leaderboard</h1>
+        <form id="addMatchForm">
+            <input type="text" id="teamName" placeholder="Team Name" required>
+            <input type="number" id="placement" placeholder="Placement (1-16)" required min="1" max="16">
+            <input type="number" id="kills" placeholder="Kills" required min="0">
+            <button type="submit" class="btn"><i class="fas fa-plus"></i> Add Match Result</button>
+        </form>
+        <div class="controls">
+            <button type="button" id="clearResults" class="btn red"><i class="fas fa-trash"></i> Clear History</button>
+            <input type="text" id="resultTitle" placeholder="Enter a title for your result">
+            <button class="btn save" onclick="saveAsImage()"><i class="fas fa-save"></i> Save Result as PNG</button>
+        </div>
+        <div class="leaderboard-wrapper">
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team Name</th>
+                        <th>Kill Points</th>
+                        <th>Placement Points</th>
+                        <th>WWCD</th>
+                        <th>Total</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
